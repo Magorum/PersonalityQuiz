@@ -51,7 +51,26 @@ public class PersonalityQuiz
         return quiz;
 
     }
+    public String[] RunConsoleQuiz()
+    {
+        String[] answers = new String[this.Questions.Count()];
+        int i = 0;
+        foreach (Question question in this.Questions)
+        {
+            Console.WriteLine(question.QuestionField);
+            foreach (Answer answer in question.Answers)
+            {
+                Console.WriteLine(answer.AnswerField);
+            }
+            Console.WriteLine("Enter your choice");
+            answers[i] = Console.ReadLine();
+            i++;
+        }
+        return answers;
+    }
 }
+
+
 
 
 public class Question
