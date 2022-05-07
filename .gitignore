@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+apikey.txt
+bin
+obj
+.vs
