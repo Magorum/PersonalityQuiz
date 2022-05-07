@@ -11,15 +11,14 @@ namespace PersonalityQuizTelegram
             PersonalityQuiz quiz = PersonalityQuiz.GetPreGenQuiz();
 
             String output = JsonSerializer.Serialize(quiz);
-            Hashtable results  = new Hashtable();
-            foreach (Result result in quiz.Results)
-            {
-                results.Add(result.Name, 0);
-            }
-            String[] answer = quiz.RunConsoleQuiz();
-   
 
+            ConsoleQuiz consoleQuiz = new ConsoleQuiz(quiz.Questions,quiz.Results);
+            string[] answer = consoleQuiz.RunConsoleQuiz();
+            Result result = consoleQuiz.CalculateResult(answer);
+            Console.WriteLine(result.Name);
+            Console.WriteLine(result.Description);
+            Console.WriteLine(result.Imageurl);
 
         }
     }
-}         
+}        
