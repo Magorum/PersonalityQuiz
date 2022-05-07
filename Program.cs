@@ -11,6 +11,7 @@ namespace PersonalityQuizTelegram
             PersonalityQuiz quiz = PersonalityQuiz.GetPreGenQuiz();
 
             String output = JsonSerializer.Serialize(quiz);
+            Console.WriteLine(output);
 
             ConsoleQuiz consoleQuiz = new ConsoleQuiz(quiz.Questions,quiz.Results);
             string[] answer = consoleQuiz.RunConsoleQuiz();

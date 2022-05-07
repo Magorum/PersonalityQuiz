@@ -1,0 +1,57 @@
+{
+  "Questions": [
+    {
+      "QuestionField": "Are you short?",
+      "Answers": [
+        {
+          "AnswerField": "yes",
+          "Points": {
+            "Yoda": 10
+          }
+        },
+        {
+          "AnswerField": "no",
+          "Points": {
+            "Luke Skywalker": 10,
+            "Darth Vader": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "Are you a Jedi Master?",
+      "Answers": [
+        {
+          "AnswerField": "yes",
+          "Points": {
+            "Luke Skywalker": 10,
+            "Yoda": 10
+          }
+        },
+        {
+          "AnswerField": "no",
+          "Points": {
+            "Darth Vader": 10
+          }
+        }
+      ]
+    }
+  ],
+  "Results": [
+    {
+      "Name": "Darth Vader",
+      "Description": "He breath funny he a bit evil but not all the way",
+      "Imageurl": "https://upload.wikimedia.org/wikipedia/en/0/0b/Darth_Vader_in_The_Empire_Strikes_Back.jpg"
+    },
+    {
+      "Name": "Luke Skywalker",
+      "Description": "No hand :( but he fly x wing good",
+      "Imageurl": "https://i.redd.it/x7f4u19956e41.jpg"
+    },
+    {
+      "Name": "Yoda",
+      "Description": "Tiny Green Dude he hit with stick",
+      "Imageurl": "https://static.wikia.nocookie.net/starwars/images/d/d6/Yoda_SWSB.png/revision/latest/scale-to-width-down/1000?cb=20150206140125"
+    }
+  ]
+}
