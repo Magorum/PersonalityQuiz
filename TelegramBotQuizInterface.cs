@@ -75,7 +75,7 @@ namespace PersonalityQuizTelegram
                 //Can't get it in the PollAnswer update type
                 //Get update.PollAnswer.PollId and compare to get the chat ID
                 var chatId = -1001639508913;
-
+                //TODO find which poll
                 String username = update.PollAnswer.User.Username;
                 String text = "";
 

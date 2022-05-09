@@ -17,6 +17,25 @@ namespace PersonalityQuizTelegram
         public Question[]? Questions { get; set; }
         public Result[]? Results { get; set; }
 
+        public Result? CalculateResult(int[] selections)
+        {
+            Hashtable resultsTally = new();
+            foreach (Result result in this.Results)
+            {
+                resultsTally.Add(result.Name, 0);
+            }
+            int i = 0;
+            foreach (Question question in this.Questions)
+            {
+               foreach (DictionaryEntry pointValue in question.Answers[selections[i]].Points)
+                {
+                    int v = (int)pointValue.Value + (int)resultsTally[pointValue.Key];
+                    resultsTally[pointValue.Key] = v;
+                }
+                i++;
+            }
+            return totalResult(resultsTally);
+        }
         public Result? CalculateResult(string[] selections)
         {
             Hashtable resultsTally = new();
@@ -41,6 +60,9 @@ namespace PersonalityQuizTelegram
 
                 i++;
             }
+            return totalResult(resultsTally);
+        }
+        private Result totalResult(Hashtable resultsTally) { 
             string finalKey = "";
             int finalValue = 0;
             foreach (DictionaryEntry result in resultsTally)
@@ -52,7 +74,7 @@ namespace PersonalityQuizTelegram
                 }
             }
 
-            foreach (Result result in this.Results)
+            foreach (Result result in Results)
             {
                 if (finalKey.Equals(result.Name))
                 {
