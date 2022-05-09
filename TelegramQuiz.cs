@@ -8,10 +8,13 @@ namespace PersonalityQuizTelegram
 {
     public class TelegramQuiz : PersonalityQuiz
     {
+        readonly long chatId;
+        long[] pollIds = new long[0];
         public TelegramQuiz(Question[] questions, Result[] results) : base(questions, results)
         {
             Questions = questions;
             Results = results;
+            pollIds = new long[questions.Length];
 
         }
 
