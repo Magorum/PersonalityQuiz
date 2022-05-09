@@ -1,4 +1,5 @@
-﻿using Telegram.Bot;
+﻿using System.Collections.Concurrent;
+using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Extensions.Polling;
 using Telegram.Bot.Types;
@@ -10,12 +11,20 @@ namespace PersonalityQuizTelegram
     {
         readonly long chatId;
         long[] pollIds = new long[0];
+        UserResults userResults = new();
         public TelegramQuiz(Question[] questions, Result[] results) : base(questions, results)
         {
             Questions = questions;
             Results = results;
             pollIds = new long[questions.Length];
 
+        }
+
+        public string updatePollResults(string username, long pollId, int option)
+        {
+            //will return "" if quiz results are not finished
+            //will return username if quiz has been completly filled out
+            return userResults.updateQuiz(username,pollId,option,Questions.Length);
         }
 
         public async void startBot(string accessKey)
@@ -42,6 +51,8 @@ namespace PersonalityQuizTelegram
 
             // Send cancellation request to stop bot
             cts.Cancel();
+
+
 
             async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
             {
@@ -142,5 +153,41 @@ namespace PersonalityQuizTelegram
 
         }
 
+        private class UserResults
+        {
+            ConcurrentDictionary<string, ConcurrentDictionary<long, int>> results = new ConcurrentDictionary<string, ConcurrentDictionary<long, int>>();
+
+            public string updateQuiz(string username, long pollId, int option,int pollCount)
+            {
+                ConcurrentDictionary<long, int> userInfo;
+                if (results.ContainsKey(username))
+                {
+                    userInfo = results[username];
+                }
+                else
+                {
+                    userInfo = new ConcurrentDictionary<long, int>();
+                    results[username] = userInfo;
+                }
+                
+                if (userInfo.ContainsKey(pollId))
+                {
+                    userInfo[pollId] = option;
+                }
+                else
+                {
+                    userInfo.TryAdd(pollId, option);
+                    //Checks to see if poll has completed
+                    if(userInfo.Count == pollCount)
+                    {
+                        return username;
+                    }
+
+                }
+                
+                
+                return "";
+            }
+        }
     }
 }
