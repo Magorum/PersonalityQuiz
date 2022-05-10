@@ -1,0 +1,360 @@
+{
+  "Questions": [
+    {
+      "QuestionField": "How do you feel about magic?",
+      "Answers": [
+        {
+          "AnswerField": "I hate it",
+          "Points": {
+            "Shrek": 0,
+            "Donkey": 0,
+            "Dragon": 0,
+            "Fiona": 0,
+            "Lord Farquaad": 20,
+            "Magic Mirror": 0,
+            "Pinocchio": 10,
+            "Gingy": 0
+          }
+        },
+        {
+          "AnswerField": "As long as it doesn't fuck with me, it's fine",
+          "Points": {
+            "Shrek": 10,
+            "Donkey": 0,
+            "Dragon": 10,
+            "Fiona": 10,
+            "Lord Farquaad": 0,
+            "Magic Mirror": 0,
+            "Pinocchio": 0,
+            "Gingy": 0
+          }
+        },
+        {
+          "AnswerField": "I love Magic",
+          "Points": {
+            "Shrek": 0,
+            "Donkey": 10,
+            "Dragon": 0,
+            "Fiona": 0,
+            "Lord Farquaad": 0,
+            "Magic Mirror": 10,
+            "Pinocchio": 0,
+            "Gingy": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "Where is your dream vacation?",
+      "Answers": [
+        {
+          "AnswerField": "Somewhere restful where I can relax",
+          "Points": {
+            "Shrek": 10,
+            "Dragon": 10,
+            "Lord Farquaad": 10,
+            "Magic Mirror": 10
+          }
+        },
+        {
+          "AnswerField": "Just a giant bender of a party",
+          "Points": {
+            "Pinocchio": 10,
+            "Gingy": 10
+          }
+        },
+        {
+          "AnswerField": "A visit with my extended family",
+          "Points": {
+            "Fiona": 10
+          }
+        },
+        {
+          "AnswerField": "Anywhere with my friends",
+          "Points": {
+            "Donkey": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "What is your home aesthetic?",
+      "Answers": [
+        {
+          "AnswerField": "Industrial baby",
+          "Points": {
+            "Magic Mirror": 10,
+            "Pinocchio": 10
+          }
+        },
+        {
+          "AnswerField": "Cottage Core",
+          "Points": {
+            "Shrek": 10,
+            "Gingy": 10
+          }
+        },
+        {
+          "AnswerField": "Castle Vibes",
+          "Points": {
+            "Dragon": 10,
+            "Fiona": 10,
+            "Lord Farquaad": 10
+          }
+        },
+        {
+          "AnswerField": "Mattress on the Floor",
+          "Points": {
+            "Donkey": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "How do you feel about rocks?",
+      "Answers": [
+        {
+          "AnswerField": "Igneous rocks are my favorite",
+          "Points": {
+            "Shrek": 10,
+            "Dragon": 10
+          }
+        },
+        {
+          "AnswerField": "If they are shiny",
+          "Points": {
+            "Donkey": 10,
+            "Lord Farquaad": 10,
+            "Gingy": 10
+          }
+        },
+        {
+          "AnswerField": "Not a rock person",
+          "Points": {
+            "Fiona": 10,
+            "Pinocchio": 10
+          }
+        },
+        {
+          "AnswerField": "I don't like sand. It's all coarse, and rough, and irritating. And it gets everywhere",
+          "Points": {
+            "Magic Mirror": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "Thongs?",
+      "Answers": [
+        {
+          "AnswerField": "no",
+          "Points": {
+            "Fiona": 10
+          }
+        },
+        {
+          "AnswerField": "yes",
+          "Points": {
+            "Donkey": 10
+          }
+        },
+        {
+          "AnswerField": "what?",
+          "Points": {
+            "Shrek": 10,
+            "Dragon": 10,
+            "Magic Mirror": 10,
+            "Pinocchio": 10
+          }
+        },
+        {
+          "AnswerField": "ohhhhh yes",
+          "Points": {
+            "Lord Farquaad": 10,
+            "Pinocchio": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "Pick a color?",
+      "Answers": [
+        {
+          "AnswerField": "Blue",
+          "Points": {
+            "Donkey": 10
+          }
+        },
+        {
+          "AnswerField": "Red",
+          "Points": {
+            "Dragon": 10,
+            "Lord Farquaad": 10
+          }
+        },
+        {
+          "AnswerField": "Green",
+          "Points": {
+            "Shrek": 10,
+            "Fiona": 10
+          }
+        },
+        {
+          "AnswerField": "Purple",
+          "Points": {
+            "Gingy": 10
+          }
+        },
+        {
+          "AnswerField": "no",
+          "Points": {
+            "Magic Mirror": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "Pick a Flavor",
+      "Answers": [
+        {
+          "AnswerField": "Sweet",
+          "Points": {
+            "Donkey": 10,
+            "Gingy": 10
+          }
+        },
+        {
+          "AnswerField": "Savoury",
+          "Points": {
+            "Fiona": 10,
+            "Lord Farquaad": 10,
+            "Magic Mirror": 10
+          }
+        },
+        {
+          "AnswerField": "Sour",
+          "Points": {
+            "Shrek": 10,
+            "Pinocchio": 10
+          }
+        },
+        {
+          "AnswerField": "Spicy",
+          "Points": {
+            "Donkey": 10,
+            "Dragon": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "Pick a boozy drink",
+      "Answers": [
+        {
+          "AnswerField": "Pina Colada",
+          "Points": {
+            "Fiona": 10,
+            "Pinocchio": 10,
+            "Gingy": 10
+          }
+        },
+        {
+          "AnswerField": "Martini",
+          "Points": {
+            "Lord Farquaad": 10,
+            "Magic Mirror": 10
+          }
+        },
+        {
+          "AnswerField": "Beer",
+          "Points": {
+            "Shrek": 10,
+            "Donkey": 10
+          }
+        },
+        {
+          "AnswerField": "Old Fashioned",
+          "Points": {
+            "Dragon": 10
+          }
+        }
+      ]
+    },
+    {
+      "QuestionField": "Pick a song",
+      "Answers": [
+        {
+          "AnswerField": "All Star",
+          "Points": {
+            "Shrek": 10,
+            "Dragon": 10,
+            "Gingy": 10
+          }
+        },
+        {
+          "AnswerField": "Hallelujah",
+          "Points": {
+            "Magic Mirror": 10,
+            "Gingy": 10
+          }
+        },
+        {
+          "AnswerField": "My Beloved Monster",
+          "Points": {
+            "Fiona": 10,
+            "Pinocchio": 10
+          }
+        },
+        {
+          "AnswerField": "Bad Reputation",
+          "Points": {
+            "Donkey": 10,
+            "Lord Farquaad": 10
+          }
+        }
+      ]
+    }
+  ],
+  "Results": [
+    {
+      "Name": "Shrek",
+      "Description": "Gruff but lovable dude",
+      "Imageurl": "https://static.wikia.nocookie.net/shrek/images/9/9b/GoodShrekImage.png/revision/latest/scale-to-width-down/1000?cb=20201220080410"
+    },
+    {
+      "Name": "Donkey",
+      "Description": "Talk I love to talk I'm the talkiest thing that ever talked'",
+      "Imageurl": "https://static.wikia.nocookie.net/shrek/images/d/dc/DonkeyTransparent.png/revision/latest/scale-to-width-down/1000?cb=20171218193004"
+    },
+    {
+      "Name": "Dragon",
+      "Description": "We love a fiery glowup",
+      "Imageurl": "https://static.wikia.nocookie.net/shrek/images/1/19/Dragon_Forever_After_transparent.png/revision/latest/scale-to-width-down/585?cb=20210624203030"
+    },
+    {
+      "Name": "Fiona",
+      "Description": "She's a loaded pistol who likes piña coladas and getting caught in the rain",
+      "Imageurl": "https://static.wikia.nocookie.net/shrek/images/5/5a/Fiona_Ogre_Forever_After_Portrait.png/revision/latest/scale-to-width-down/299?cb=20201111033809"
+    },
+    {
+      "Name": "Lord Farquaad",
+      "Description": "F hopefully you aren't compansating for anything'",
+      "Imageurl": "https://static.wikia.nocookie.net/shrek/images/2/2d/Farquaad_portrait.png/revision/latest/scale-to-width-down/408?cb=20210624204736"
+    },
+    {
+      "Name": "Magic Mirror",
+      "Description": "Sure knows a lot for never going outside",
+      "Imageurl": "https://static.wikia.nocookie.net/shrek/images/8/8d/MagicMirrorTransparent.png/revision/latest/scale-to-width-down/165?cb=20171222163704"
+    },
+    {
+      "Name": "Pinocchio",
+      "Description": "According to Aleks is a pervert",
+      "Imageurl": "https://static.wikia.nocookie.net/shrek/images/b/b7/PinocchioTransparent.png/revision/latest/scale-to-width-down/400?cb=20171219222542"
+    },
+    {
+      "Name": "Gingy",
+      "Description": "NOOOOO not my gumdrop buttons",
+      "Imageurl": "https://static.wikia.nocookie.net/shrek/images/6/61/GingerbreadManTransparent.png/revision/latest/scale-to-width-down/352?cb=20171218193006"
+    }
+  ]
+}

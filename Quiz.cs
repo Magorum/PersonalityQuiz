@@ -29,7 +29,9 @@ namespace PersonalityQuizTelegram
             {
                foreach (DictionaryEntry pointValue in question.Answers[selections[i]].Points)
                 {
-                    int v = (int)pointValue.Value + (int)resultsTally[pointValue.Key];
+                    int value = (int)(long)pointValue.Value;
+                    int ogvalue = (int)resultsTally[pointValue.Key];
+                    int v = value + ogvalue;
                     resultsTally[pointValue.Key] = v;
                 }
                 i++;

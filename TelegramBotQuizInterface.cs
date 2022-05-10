@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Extensions.Polling;
@@ -67,6 +68,28 @@ namespace PersonalityQuizTelegram
                             PersonalityQuiz quiz = PersonalityQuiz.GetPreGenQuiz();
                             telegramQuiz = new TelegramQuiz(quiz.Questions, quiz.Results,update.Message.Chat.Id);
                             telegramQuiz.startQuiz(botClient, cancellationToken, 10);
+                        }
+                        else
+                        {
+                            string fileLocation = @"C:\Users\Tyler\Documents\GitHub\PersonalityQuiz\quiz\"+messageText.Remove(0,5);
+                            try
+                            {
+                                PersonalityQuiz quiz;
+                                using (StreamReader file = System.IO.File.OpenText(fileLocation))
+                                {
+                                    JsonSerializer serializer = new JsonSerializer();
+                                    quiz = (PersonalityQuiz)serializer.Deserialize(file, typeof(PersonalityQuiz));
+
+                                    telegramQuiz = new TelegramQuiz(quiz.Questions, quiz.Results, update.Message.Chat.Id);
+                                    telegramQuiz.startQuiz(botClient, cancellationToken, 10);
+
+
+                                }
+                            }
+                            catch (Exception ex)
+                            {
+                                Console.WriteLine(ex.ToString());
+                            }
                         }
                     }
                 }
