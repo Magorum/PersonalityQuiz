@@ -56,4 +56,4 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: kizaing/personalityquiz:latest
+          tags: twintyler/personalityquiz:latest
