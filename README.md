@@ -13,12 +13,14 @@ Quizzes are created in a .json format then called from the chat for example 'qui
 Each answer to a question can add any amount of points to a possible result
 In the example below 'yes' would add 10 points to Yoda and 'no' would add 10 points to Darth Vader
 
-![Quiz format in Telegram](https://i.imgur.com/dIAoIvy.jpeg "Quiz Input for polls")
+<img src="https://i.imgur.com/dIAoIvy.jpeg" width="300" height="500">
+
 
 The quiz will also post the results into the chat when finished
 Will pull an image from the url in the json
 
-![Final Result output from quiz](https://i.imgur.com/5hvTm27.jpeg "Quiz output")
+<img src="https://i.imgur.com/5hvTm27.jpeg" width="300" height="500">
+
 
 ### Here's an small example of the format more detailed ones can be found in /quiz
 ```json
