@@ -10,6 +10,13 @@ Creates a number of Telegram native polls then as people fill them out will post
 
 Quizzes are created in a .json format then called from the chat for example 'quiz example.json'
 
+Each answer to a question can add any amount of points to a possible result
+In the example below 'yes' would add 10 points to Yoda and 'no' would add 10 points to Darth Vader
+![Quiz format in Telegram](https://imgur.com/a/narrWj7 "Quiz Input for polls")
+The quiz will also post the results into the chat when finished
+Will pull an image from the url in the json
+![Final Result output from quiz](https://imgur.com/a/JNWn8mj "Quiz output")
+
 ### Here's an small example of the format more detailed ones can be found in /quiz
 ```json
 {
@@ -21,12 +28,22 @@ Quizzes are created in a .json format then called from the chat for example 'qui
             "AnswerField": "yes",
             "Points": {
              "Yoda": 10
+           },
+         {
+            "AnswerField": "no",
+            "Points": {
+             "Darth Vader": 10
            }
           }
         ]
       }
     ],
     "Results": [
+     {
+      "Name": "Darth Vader",
+      "Description": "He breath funny he a bit evil but not all the way",
+      "Imageurl": "https://upload.wikimedia.org/wikipedia/en/0/0b/Darth_Vader_in_The_Empire_Strikes_Back.jpg"
+     },
      {
        "Name": "Yoda",
         "Description": "Tiny Green Dude he hit with stick",
