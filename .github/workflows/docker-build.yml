@@ -29,7 +29,7 @@ jobs:
   main:
     name: Build docker image
     needs: [ build ]
-    runs-on: ubuntu-url
+    runs-on: ubuntu-latest
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v2
@@ -56,4 +56,4 @@ jobs:
           context: .
           platforms: linux/amd64
           push: true
-          tags: kizaing/personalityquiz:latest
+          tags: twintyler/personalityquiz:latest
