@@ -11,7 +11,8 @@ Creates a number of Telegram native polls then as people fill them out will post
 Quizzes are created in a .json format then called from the chat for example 'quiz example.json'
 
 ### Here's an small example of the format more detailed ones can be found in /quiz
-<code>{
+```json
+{
     "Questions": [
      {
         "QuestionField": "Are you short?",
@@ -32,6 +33,7 @@ Quizzes are created in a .json format then called from the chat for example 'qui
        "Imageurl": "https://static.wikia.nocookie.net/starwars/images/d/d6/Yoda_SWSB.png/revision/latest/scale-to-width-down/1000?cb=20150206140125"
      }
    ]
-  }</code>
+  }
+  ```
 
 
