@@ -10,7 +10,7 @@ namespace PersonalityQuizTelegram
             string key = ConfigurationManager.AppSettings.Get("TelegramKey");
             TelegramBotQuizInterface telegramBotQuizInterface = new TelegramBotQuizInterface(key);
 
-            Console.ReadLine();
+            while (true) ;
             
 
         }
