@@ -12,7 +12,7 @@ namespace PersonalityQuizTelegram
     public class TelegramBotQuizInterface
     {
         TelegramQuiz telegramQuiz;
-        string location = ConfigurationManager.AppSettings.Get("FolderLocation");
+        string location = ConfigurationManager.AppSettings.Get(@"FolderLocation");
         public TelegramBotQuizInterface(string key)
         {
             var botClient = new TelegramBotClient(key);
