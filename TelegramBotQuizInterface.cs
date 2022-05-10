@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Configuration;
 using Telegram.Bot;
 using Telegram.Bot.Exceptions;
 using Telegram.Bot.Extensions.Polling;
@@ -11,6 +12,7 @@ namespace PersonalityQuizTelegram
     public class TelegramBotQuizInterface
     {
         TelegramQuiz telegramQuiz;
+        string location = ConfigurationManager.AppSettings.Get("FolderLocation");
         public TelegramBotQuizInterface(string key)
         {
             var botClient = new TelegramBotClient(key);
@@ -71,7 +73,7 @@ namespace PersonalityQuizTelegram
                         }
                         else
                         {
-                            string fileLocation = @"C:\Users\Tyler\Documents\GitHub\PersonalityQuiz\quiz\"+messageText.Remove(0,5);
+                            string fileLocation = location+messageText.Remove(0,5);
                             try
                             {
                                 PersonalityQuiz quiz;
