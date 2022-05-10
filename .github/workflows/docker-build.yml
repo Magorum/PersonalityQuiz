@@ -29,7 +29,7 @@ jobs:
   main:
     name: Build docker image
     needs: [ build ]
-    runs-on: ubuntu-url
+    runs-on: ubuntu-latest
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v2
