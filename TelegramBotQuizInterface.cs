@@ -9,10 +9,13 @@ namespace PersonalityQuizTelegram
 {
     public class TelegramBotQuizInterface
     {
+        TelegramQuiz telegramQuiz;
         public TelegramBotQuizInterface(string key)
         {
             var botClient = new TelegramBotClient(key);
             using var cts = new CancellationTokenSource();
+             
+
 
             // StartReceiving does not block the caller thread. Receiving is done on the ThreadPool.
             var receiverOptions = new ReceiverOptions
@@ -57,43 +60,54 @@ namespace PersonalityQuizTelegram
 
                     Console.WriteLine($"Received a '{messageText}' message in chat {chatId}.");
 
-                    if (messageText == "quiz")
+                    if (messageText.Contains("quiz"))
                     {
-                        
+                        if (messageText == "quiz pregen")
+                        {
+                            PersonalityQuiz quiz = PersonalityQuiz.GetPreGenQuiz();
+                            telegramQuiz = new TelegramQuiz(quiz.Questions, quiz.Results,update.Message.Chat.Id);
+                            telegramQuiz.startQuiz(botClient, cancellationToken, 10);
+                        }
                     }
-
-                    // Echo received message text
-                    Message sentMessage = await botClient.SendTextMessageAsync(
-                        chatId: chatId,
-                        text: "You said:\n" + messageText,
-                        cancellationToken: cancellationToken);
                 }
             }
             if (update.Type == UpdateType.PollAnswer)
             {
-                //Should probubly figure out a good place to store this off
-                //Can't get it in the PollAnswer update type
-                //Get update.PollAnswer.PollId and compare to get the chat ID
-                var chatId = -1001639508913;
-                //TODO find which poll
-                String username = update.PollAnswer.User.Username;
-                String text = "";
-
-                if (update.PollAnswer.OptionIds.Length > 0)
+                if (telegramQuiz != null)
                 {
-                    String option = update.PollAnswer.OptionIds[0].ToString();
-                    text = username + " voted for Option: " + option;
-                }
-                else
-                {
-                    text = username + "has retracted their vote :(";
-                }
+                    var chatId = telegramQuiz.getChatId();
+                    String username = update.PollAnswer.User.FirstName;
+                    string pollId = update.PollAnswer.PollId;
 
+                    if (update.PollAnswer.OptionIds.Length > 0)
+                    {
+                        if (username != null)
+                        {
+                            int option = update.PollAnswer.OptionIds[0];
+                            string userReturn = telegramQuiz.updatePollResults(username, pollId, option);
+                            if (userReturn != "")
+                            {
+                                Result result = telegramQuiz.CalculateResult(userReturn);
+                                if (result != null)
+                                {
+                                    String url = result.Imageurl;
+                                    String caption = result.Description;
+                                    String name = result.Name;
+                                    Message photoMessage = await botClient.SendPhotoAsync(
+                                        chatId: chatId,
+                                        photo: url,
+                                        caption: userReturn + " your result is " + name,
+                                        cancellationToken: cancellationToken);
+                                    Message textMessage = await botClient.SendTextMessageAsync(
+                              chatId: chatId,
+                              text: caption,
+                              cancellationToken: cancellationToken);
 
-                Message sentMessage = await botClient.SendTextMessageAsync(
-                     chatId: chatId,
-                     text: text,
-                     cancellationToken: cancellationToken);
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
 
