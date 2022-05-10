@@ -56,7 +56,8 @@ namespace PersonalityQuizTelegram
                     cancellationToken: cts,
                     isAnonymous: false,
                     question:question.QuestionField,
-                    options:quizOptions(question)
+                    options:quizOptions(question),
+                    disableNotification:true
                     );
                 if (message != null)
                 {
@@ -71,12 +72,17 @@ namespace PersonalityQuizTelegram
         public Result CalculateResult(string username)
         {
             string test = username + " ";
-            foreach (int i in userResults.getOptions(username))
+            int[] options = new int[pollIds.Count()];
+            int i = 0;
+            foreach (string pollId in pollIds)
             {
-                test = test + " " + i;
+                test = test + " " + userResults.getOption(username,pollId);
+                options[i] = userResults.getOption(username,pollId);
+                i++;
+
             }
             Console.WriteLine(test);
-            return CalculateResult(userResults.getOptions(username));
+            return CalculateResult(options);
         }
 
         private class UserResults
@@ -117,6 +123,14 @@ namespace PersonalityQuizTelegram
             { 
                 return results[username].Values.ToArray();
             }
+
+            public int getOption(string username,string pollId)
+            {
+                ConcurrentDictionary<string, int> userInfo;
+                userInfo = results[username];
+                return userInfo[pollId];
+            }
+
 
 
         }

@@ -69,6 +69,7 @@ namespace PersonalityQuizTelegram
             int finalValue = 0;
             foreach (DictionaryEntry result in resultsTally)
             {
+                Console.WriteLine(result.Key.ToString() + " " + result.Value.ToString());
                 if ((int)result.Value > finalValue)
                 {
                     finalKey = (string)result.Key;
