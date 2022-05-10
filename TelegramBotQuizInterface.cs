@@ -17,7 +17,10 @@ namespace PersonalityQuizTelegram
         {
             var botClient = new TelegramBotClient(key);
             using var cts = new CancellationTokenSource();
-             
+            botClient.SendTextMessageAsync(
+                              chatId: -1001639508913,
+                              text: "I got here"
+                             );
 
 
             // StartReceiving does not block the caller thread. Receiving is done on the ThreadPool.
