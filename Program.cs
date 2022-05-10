@@ -13,8 +13,7 @@ namespace PersonalityQuizTelegram
             Console.WriteLine("Hey can you see this?");
             while (true)
             {
-                Console.WriteLine("Heartbeat...");
-                Thread.Sleep(1000);
+
             } ;
             
 

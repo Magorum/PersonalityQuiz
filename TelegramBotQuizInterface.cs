@@ -39,8 +39,6 @@ namespace PersonalityQuizTelegram
             Console.WriteLine($"Start listening...");
             while (true)
             {
-                Console.WriteLine("Heartbeat...");
-                Thread.Sleep(1000);
             };
 
             // Send cancellation request to stop bot
