@@ -2,6 +2,6 @@
 
 sed -i "s/TG_TOKEN/$TG_TOKEN/" /app/PersonalityQuizTelegram.dll.config
 
-mv /quiztmp /app/quiz
+mv /quiztmp/*.json /app/quiz/
 
 ./PersonalityQuizTelegram
